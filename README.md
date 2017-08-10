@@ -5,28 +5,44 @@ Tweakers is Nederlands grootste site voor alles wat met computers, consumentenel
 
 ### Flow Triggers:
 Tweakers RSS nieuwsbericht is beschikbaar met de volgende tags:
+```
 * Titel: Titel van de publicatie
+```
 
 Tweakers RSS news release is available with the following tokens:
+```
 * Title: Title of the news release
+```
 
 Tweakers RSS meuktracker (software) is beschikbaar met de volgende tags:
+```
 * Titel: Titel van de publicatie
+```
 
 Tweakers RSS meuktracker (software) is available with the following tokens:
+```
 * Title: Title of the news release
+```
 
 Tweakers RSS spellen is beschikbaar met de volgende tags:
+```
 * Titel: Titel van de publicatie
+```
 
 Tweakers RSS games is available with the following tokens:
+```
 * Title: Title of the news release
+```
 
 Tweakers RSS vraag en aanbod is beschikbaar met de volgende tags:
+```
 * Titel: Titel van de publicatie
+```
 
 Tweakers RSS question and answer (marketplace) is available with the following tokens:
+```
 * Title: Title of the news release
+```
 
 * De Tweakers Homey app checkt iedere 5 minuten of er nieuwe publicaties beschikbaar zijn
 * The Tweakers homey app checks every 5 minutes if there are new publications available
