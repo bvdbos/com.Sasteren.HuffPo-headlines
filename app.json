@@ -1,0 +1,121 @@
+{
+	"id": "net.tweakers.homey",
+	"sdk": 2,
+	"name": {
+		"en": "Tweakers",
+		"nl": "Tweakers"
+	},
+	"description": {
+		"en": "The Tweakers Homey app",
+		"nl": "De Tweakers Homey app"
+	},
+	"category": "internet",
+	"version": "0.8.0",
+	"compatibility": ">=1.5.0",
+	"author": {
+		"name": "Lubbert Kramer",
+		"email": "lubbert@kramerendevries.nl"
+	},
+	"permissions": [
+		"homey:manager:speech-input",
+		"homey:manager:speech-output"
+	],
+	"images": {
+		"large": "./assets/images/large.png",
+		"small": "./assets/images/small.png"
+	},
+	"flow": {
+		"triggers": [
+			{
+				"id": "TriggerTweakersMixed",
+				"title": {
+					"en": "Tweakers RSS mixed",
+					"nl": "Tweakers RSS gemengd"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Homey is nu wereldwijd te koop"
+					}
+				]
+			},
+			{
+				"id": "TriggerTweakersNieuws",
+				"title": {
+					"en": "Tweakers RSS news",
+					"nl": "Tweakers RSS nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Homey is nu wereldwijd te koop"
+					}
+				]
+			},
+			{
+				"id": "TriggerTweakersMeukTracker",
+				"title": {
+					"en": "Tweakers RSS meuktracker",
+					"nl": "Tweakers RSS meuktracker"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Homey 1.5 is zojuist vrijgegeven in het stabiele kanaal"
+					}
+				]
+			},
+			{
+				"id": "TriggerTweakersGames",
+				"title": {
+					"en": "Tweakers RSS games",
+					"nl": "Tweakers RSS games"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Homeygotchi is zojuist gelanceerd voor Homey"
+					}
+				]
+			},
+			{
+				"id": "TriggerTweakersVraagAanbod",
+				"title": {
+					"en": "Tweakers RSS question and answer",
+					"nl": "Tweakers RSS vraag en aanbod"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Homey te koop voor geen geld"
+					}
+				]
+			}
+		]
+	}
+}
