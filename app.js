@@ -11,10 +11,22 @@ class Tweakers extends Homey.App {
 
         //App instantie variablen
         this.TweakersMixed = null;
-	      this.TweakersNieuws = null;
-	      this.TweakersMeukTracker = null;
-	      this.TweakersGames = null;
-	      this.TweakersVraagAanbod = null;
+        this.TweakersNieuws = null;
+        this.TweakersMeukTracker = null;
+        this.TweakersGames = null;
+        this.TweakersVraagAanbod = null;
+
+
+        this.TriggerTweakersMixed = new Homey.FlowCardTrigger('TriggerTweakersMixed')
+            .register();
+        this.TriggerTweakersNieuws = new Homey.FlowCardTrigger('TriggerTweakersNieuws')
+            .register();
+        this.TriggerTweakersMeukTracker = new Homey.FlowCardTrigger('TriggerTweakersMeukTracker')
+            .register();
+        this.TriggerTweakersGames = new Homey.FlowCardTrigger('TriggerTweakersGames')
+            .register();
+        this.TriggerTweakersVraagAanbod = new Homey.FlowCardTrigger('TriggerTweakersVraagAanbod')
+            .register();
 
         //Start loop interval
         this.log('StartInterval');
@@ -40,6 +52,8 @@ class Tweakers extends Homey.App {
         setInterval(() => {
             this.LoopTweakers();
         }, 300000); //5 minuten ->  300000
+        // Call this.loopTweakers() to set the initial state
+        this.LoopTweakers();
     }
 
     //Trigger TweakersMixed
@@ -64,20 +78,18 @@ class Tweakers extends Homey.App {
 
         if (this.TweakersMixed !== TweakersMixedDatum) {
             this.log('IF timestamp:', this.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
-	        this.TweakersMixed = TweakersMixedDatum;
+            this.TweakersMixed = TweakersMixedDatum;
             console.log('IF titel:', TweakersMixedTitel);
             console.log('IF TweakersMixedCategorie:', TweakersMixedCategorie);
             console.log('IF timestamp update:', this.TweakersMixed);
 
             //trigger flow
-            let TriggerTweakersMixed = new Homey.FlowCardTrigger('TriggerTweakersMixed');
 
             let tokens = {
                 'title': TweakersMixedTitel
             }
 
-            TriggerTweakersMixed
-                .register()
+            return this.TriggerTweakersMixed
                 .trigger(tokens)
                 .catch(this.error)
                 .then(this.log)
@@ -110,19 +122,17 @@ class Tweakers extends Homey.App {
 
         if (this.TweakersNieuws !== TweakersNieuwsDatum) {
             this.log('IF timestamp:', this.TweakersNieuws + ' = ' + 'TweakersNieuwsDatum:', TweakersNieuwsDatum);
-	          this.TweakersNieuws = TweakersNieuwsDatum;
+            this.TweakersNieuws = TweakersNieuwsDatum;
             console.log('IF titel:', TweakersNieuwsTitel);
             console.log('IF timestamp update:', this.TweakersNieuws);
 
             //trigger flow
-            let TriggerTweakersNieuws = new Homey.FlowCardTrigger('TriggerTweakersNieuws');
 
             let tokens = {
                 'title': TweakersNieuwsTitel
             }
 
-            TriggerTweakersNieuws
-                .register()
+            return this.TriggerTweakersNieuws
                 .trigger(tokens)
                 .catch(this.error)
                 .then(this.log)
@@ -154,19 +164,17 @@ class Tweakers extends Homey.App {
 
         if (this.TweakersMeukTracker !== TweakersMeukDatum) {
             this.log('IF timestamp:', this.TweakersMeukTracker + ' = ' + 'TweakersMeukDatum:', TweakersMeukDatum);
-	          this.TweakersMeukTracker = TweakersMeukDatum;
+            this.TweakersMeukTracker = TweakersMeukDatum;
             console.log('IF titel:', TweakersMeukTitel);
             console.log('IF timestamp update:', this.TweakersMeukTracker);
 
             //trigger flow
-            let TriggerTweakersMeukTracker = new Homey.FlowCardTrigger('TriggerTweakersMeukTracker');
 
             let tokens = {
                 'title': TweakersMeukTitel
             }
 
-            TriggerTweakersMeukTracker
-                .register()
+            return this.TriggerTweakersMeukTracker
                 .trigger(tokens)
                 .catch(this.error)
                 .then(this.log)
@@ -198,19 +206,17 @@ class Tweakers extends Homey.App {
 
         if (this.TweakersGames !== TweakersGamesDatum) {
             this.log('IF timestamp:', this.TweakersGames + ' = ' + 'TweakersGamesDatum:', TweakersGamesDatum);
-	          this.TweakersGames = TweakersGamesDatum;
+            this.TweakersGames = TweakersGamesDatum;
             console.log('IF titel:', TweakersGamesTitel);
             console.log('IF timestamp update:', this.TweakersGames);
 
             //trigger flow
-            let TriggerTweakersGames = new Homey.FlowCardTrigger('TriggerTweakersGames');
 
             let tokens = {
                 'title': TweakersGamesTitel
             }
 
-            TriggerTweakersGames
-                .register()
+            return this.TriggerTweakersGames
                 .trigger(tokens)
                 .catch(this.error)
                 .then(this.log)
@@ -242,19 +248,17 @@ class Tweakers extends Homey.App {
 
         if (this.TweakersVraagAanbod !== TweakersVraagAanbodDatum) {
             this.log('IF timestamp:', this.TweakersVraagAanbod + ' = ' + 'TweakersVraagAanbodDatum:', TweakersVraagAanbodDatum);
-	          this.TweakersVraagAanbod = TweakersVraagAanbodDatum;
+            this.TweakersVraagAanbod = TweakersVraagAanbodDatum;
             console.log('IF titel:', TweakersVraagAanbodTitel);
             console.log('IF timestamp update:', this.TweakersVraagAanbod);
 
             //trigger flow
-            let TriggerTweakersVraagAanbod = new Homey.FlowCardTrigger('TriggerTweakersVraagAanbod');
 
             let tokens = {
                 'title': TweakersVraagAanbodTitel
             }
 
-            TriggerTweakersVraagAanbod
-                .register()
+            return this.TriggerTweakersVraagAanbod
                 .trigger(tokens)
                 .catch(this.error)
                 .then(this.log)
@@ -264,7 +268,6 @@ class Tweakers extends Homey.App {
         }
 
     }
-
 
 
 }
