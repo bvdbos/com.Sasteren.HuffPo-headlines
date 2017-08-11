@@ -26,13 +26,13 @@ class Tweakers extends Homey.App {
 
     //Function LoopTweakers
     async LoopTweakers() {
-        await this.log('Start LoopTweakers');
+        this.log('Start LoopTweakers');
         await this.GetTweakersMixed();
         await this.GetTweakersNieuws();
         await this.GetTweakersMeukTracker();
         await this.GetTweakersGames();
         await this.GetTweakersVraagAanbod();
-        await this.log('Einde LoopTweakers');
+        this.log('Einde LoopTweakers');
     }
 
     //StartLoop
@@ -48,26 +48,26 @@ class Tweakers extends Homey.App {
 
             const url = 'http://feeds.feedburner.com/tweakers/mixed';
 
-            await this.log('Start GetTweakersMixed');
+            this.log('Start GetTweakersMixed');
 
             var items = await feedparser.parse(url);
-            var TweakersMixedTitel = await items[0].title;
-            var TweakersMixedCategorie = await items[0].categories;
-            var TweakersMixedDatumTZ = await items[0].date;
+            var TweakersMixedTitel = items[0].title;
+            var TweakersMixedCategorie = items[0].categories;
+            var TweakersMixedDatumTZ = items[0].date;
             var TweakersMixedDatum = Date.parse(TweakersMixedDatumTZ) / 1000
-            await this.log('End Success GetTweakersMixed');
+            this.log('End Success GetTweakersMixed');
 
         } catch (error) {
             console.error('error: ', error)
-            await this.log('End Error GetTweakersMixed');
+            this.log('End Error GetTweakersMixed');
         }
 
         if (global.TweakersMixed !== TweakersMixedDatum) {
-            await this.log('IF timestamp:', global.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
+            this.log('IF timestamp:', global.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
             global.TweakersMixed = TweakersMixedDatum;
-            await console.log('IF titel:', TweakersMixedTitel);
-            await console.log('IF TweakersMixedCategorie:', TweakersMixedCategorie);
-            await console.log('IF timestamp update:', global.TweakersMixed);
+            console.log('IF titel:', TweakersMixedTitel);
+            console.log('IF TweakersMixedCategorie:', TweakersMixedCategorie);
+            console.log('IF timestamp update:', global.TweakersMixed);
 
             //trigger flow
             let TriggerTweakersMixed = new Homey.FlowCardTrigger('TriggerTweakersMixed');
@@ -83,7 +83,7 @@ class Tweakers extends Homey.App {
                 .then(this.log)
 
         } else {
-            await this.log('ELSE timestamp:', global.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
+            this.log('ELSE timestamp:', global.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
         }
 
     }
@@ -95,24 +95,24 @@ class Tweakers extends Homey.App {
 
             const url = 'http://feeds.feedburner.com/tweakers/nieuws';
 
-            await this.log('Start GetTweakersNieuws');
+            this.log('Start GetTweakersNieuws');
 
             var items = await feedparser.parse(url);
-            var TweakersNieuwsTitel = await items[0].title;
-            var TweakersNieuwsDatumTZ = await items[0].date;
+            var TweakersNieuwsTitel = items[0].title;
+            var TweakersNieuwsDatumTZ = items[0].date;
             var TweakersNieuwsDatum = Date.parse(TweakersNieuwsDatumTZ) / 1000
-            await this.log('End Success GetTweakersNieuws');
+            this.log('End Success GetTweakersNieuws');
 
         } catch (error) {
             console.error('error: ', error)
-            await this.log('End Error GetTweakersNieuws');
+            this.log('End Error GetTweakersNieuws');
         }
 
         if (global.TweakersNieuws !== TweakersNieuwsDatum) {
-            await this.log('IF timestamp:', global.TweakersNieuws + ' = ' + 'TweakersNieuwsDatum:', TweakersNieuwsDatum);
+            this.log('IF timestamp:', global.TweakersNieuws + ' = ' + 'TweakersNieuwsDatum:', TweakersNieuwsDatum);
             global.TweakersNieuws = TweakersNieuwsDatum;
-            await console.log('IF titel:', TweakersNieuwsTitel);
-            await console.log('IF timestamp update:', global.TweakersNieuws);
+            console.log('IF titel:', TweakersNieuwsTitel);
+            console.log('IF timestamp update:', global.TweakersNieuws);
 
             //trigger flow
             let TriggerTweakersNieuws = new Homey.FlowCardTrigger('TriggerTweakersNieuws');
@@ -128,7 +128,7 @@ class Tweakers extends Homey.App {
                 .then(this.log)
 
         } else {
-            await this.log('ELSE timestamp:', global.TweakersNieuws + ' = ' + 'TweakersNieuwsDatum:', TweakersNieuwsDatum);
+            this.log('ELSE timestamp:', global.TweakersNieuws + ' = ' + 'TweakersNieuwsDatum:', TweakersNieuwsDatum);
         }
 
     }
@@ -139,24 +139,24 @@ class Tweakers extends Homey.App {
 
             const url = 'http://feeds.feedburner.com/tweakers/meuktracker';
 
-            await this.log('Start GetTweakersMeukTracker');
+            this.log('Start GetTweakersMeukTracker');
 
             var items = await feedparser.parse(url);
-            var TweakersMeukTitel = await items[0].title;
-            var TweakersMeukDatumTZ = await items[0].date;
+            var TweakersMeukTitel = items[0].title;
+            var TweakersMeukDatumTZ = items[0].date;
             var TweakersMeukDatum = Date.parse(TweakersMeukDatumTZ) / 1000
-            await this.log('End Success GetTweakersMeukTracker');
+            this.log('End Success GetTweakersMeukTracker');
 
         } catch (error) {
             console.error('error: ', error)
-            await this.log('End Error GetTweakersMeukTracker');
+            this.log('End Error GetTweakersMeukTracker');
         }
 
         if (global.TweakersMeukTracker !== TweakersMeukDatum) {
-            await this.log('IF timestamp:', global.TweakersMeukTracker + ' = ' + 'TweakersMeukDatum:', TweakersMeukDatum);
+            this.log('IF timestamp:', global.TweakersMeukTracker + ' = ' + 'TweakersMeukDatum:', TweakersMeukDatum);
             global.TweakersMeukTracker = TweakersMeukDatum;
-            await console.log('IF titel:', TweakersMeukTitel);
-            await console.log('IF timestamp update:', global.TweakersMeukTracker);
+            console.log('IF titel:', TweakersMeukTitel);
+            console.log('IF timestamp update:', global.TweakersMeukTracker);
 
             //trigger flow
             let TriggerTweakersMeukTracker = new Homey.FlowCardTrigger('TriggerTweakersMeukTracker');
@@ -172,7 +172,7 @@ class Tweakers extends Homey.App {
                 .then(this.log)
 
         } else {
-            await this.log('ELSE timestamp:', global.TweakersMeukTracker + ' = ' + 'TweakersMeukDatum:', TweakersMeukDatum);
+            this.log('ELSE timestamp:', global.TweakersMeukTracker + ' = ' + 'TweakersMeukDatum:', TweakersMeukDatum);
         }
 
     }
@@ -183,24 +183,24 @@ class Tweakers extends Homey.App {
 
             const url = 'http://feeds.feedburner.com/tweakers/games';
 
-            await this.log('Start GetTweakersGames');
+            this.log('Start GetTweakersGames');
 
             var items = await feedparser.parse(url);
-            var TweakersGamesTitel = await items[0].title;
-            var TweakersGamesDatumTZ = await items[0].date;
+            var TweakersGamesTitel = items[0].title;
+            var TweakersGamesDatumTZ = items[0].date;
             var TweakersGamesDatum = Date.parse(TweakersGamesDatumTZ) / 1000
-            await this.log('End Success GetTweakersGames');
+            this.log('End Success GetTweakersGames');
 
         } catch (error) {
             console.error('error: ', error)
-            await this.log('End Error GetTweakersGames');
+            this.log('End Error GetTweakersGames');
         }
 
         if (global.TweakersGames !== TweakersGamesDatum) {
-            await this.log('IF timestamp:', global.TweakersGames + ' = ' + 'TweakersGamesDatum:', TweakersGamesDatum);
+            this.log('IF timestamp:', global.TweakersGames + ' = ' + 'TweakersGamesDatum:', TweakersGamesDatum);
             global.TweakersGames = TweakersGamesDatum;
-            await console.log('IF titel:', TweakersGamesTitel);
-            await console.log('IF timestamp update:', global.TweakersGames);
+            console.log('IF titel:', TweakersGamesTitel);
+            console.log('IF timestamp update:', global.TweakersGames);
 
             //trigger flow
             let TriggerTweakersGames = new Homey.FlowCardTrigger('TriggerTweakersGames');
@@ -216,7 +216,7 @@ class Tweakers extends Homey.App {
                 .then(this.log)
 
         } else {
-            await this.log('ELSE timestamp:', global.TweakersGames + ' = ' + 'TweakersGamesDatum:', TweakersGamesDatum);
+            this.log('ELSE timestamp:', global.TweakersGames + ' = ' + 'TweakersGamesDatum:', TweakersGamesDatum);
         }
 
     }
@@ -227,24 +227,24 @@ class Tweakers extends Homey.App {
 
             const url = 'https://tweakers.net/feeds/va.xml';
 
-            await this.log('Start GetTweakersVraagAanbod');
+            this.log('Start GetTweakersVraagAanbod');
 
             var items = await feedparser.parse(url);
-            var TweakersVraagAanbodTitel = await items[0].title;
-            var TweakersVraagAanbodDatumTZ = await items[0].date;
+            var TweakersVraagAanbodTitel = items[0].title;
+            var TweakersVraagAanbodDatumTZ = items[0].date;
             var TweakersVraagAanbodDatum = Date.parse(TweakersVraagAanbodDatumTZ) / 1000
-            await this.log('End Success GetTweakersVraagAanbod');
+            this.log('End Success GetTweakersVraagAanbod');
 
         } catch (error) {
             console.error('error: ', error)
-            await this.log('End Error GetTweakersVraagAanbod');
+            this.log('End Error GetTweakersVraagAanbod');
         }
 
         if (global.TweakersVraagAanbod !== TweakersVraagAanbodDatum) {
-            await this.log('IF timestamp:', global.TweakersVraagAanbod + ' = ' + 'TweakersVraagAanbodDatum:', TweakersVraagAanbodDatum);
+            this.log('IF timestamp:', global.TweakersVraagAanbod + ' = ' + 'TweakersVraagAanbodDatum:', TweakersVraagAanbodDatum);
             global.TweakersVraagAanbod = TweakersVraagAanbodDatum;
-            await console.log('IF titel:', TweakersVraagAanbodTitel);
-            await console.log('IF timestamp update:', global.TweakersVraagAanbod);
+            console.log('IF titel:', TweakersVraagAanbodTitel);
+            console.log('IF timestamp update:', global.TweakersVraagAanbod);
 
             //trigger flow
             let TriggerTweakersVraagAanbod = new Homey.FlowCardTrigger('TriggerTweakersVraagAanbod');
@@ -260,7 +260,7 @@ class Tweakers extends Homey.App {
                 .then(this.log)
 
         } else {
-            await this.log('ELSE timestamp:', global.TweakersVraagAanbod + ' = ' + 'TweakersVraagAanbodDatum:', TweakersVraagAanbodDatum);
+            this.log('ELSE timestamp:', global.TweakersVraagAanbod + ' = ' + 'TweakersVraagAanbodDatum:', TweakersVraagAanbodDatum);
         }
 
     }
