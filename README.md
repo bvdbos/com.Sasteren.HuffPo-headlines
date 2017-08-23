@@ -58,7 +58,7 @@ Tweakers RSS question and answer (marketplace) is available with the following t
 * De Tweakers Homey app checkt iedere 5 minuten of er nieuwe publicaties beschikbaar zijn
 * The Tweakers homey app checks every 5 minutes if there are new publications available
 
-### Aankomende functionaliteiten / Upcoming features:
+### Upcoming features / Aankomende functionaliteiten:
 * Spraak-invoer voor verzoeken / Speech-input for requests
 * Het kunnen selecteren van categorieën om specifiekere berichten te ontvangen / Selecting categories for each RSS to narrow down the selection
 * Actie kaart die een x aantal publicaties van x categorieën kan voorlezen / Action cards wich reads  x number of publications from x categories
