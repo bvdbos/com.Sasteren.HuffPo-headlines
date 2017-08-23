@@ -16,7 +16,7 @@ class Tweakers extends Homey.App {
         this.TweakersGames = null;
         this.TweakersVraagAanbod = null;
 
-
+        //Flow card registration 
         this.TriggerTweakersMixed = new Homey.FlowCardTrigger('TriggerTweakersMixed')
             .register();
         this.TriggerTweakersNieuws = new Homey.FlowCardTrigger('TriggerTweakersNieuws')
@@ -67,6 +67,7 @@ class Tweakers extends Homey.App {
             var items = await feedparser.parse(url);
             var TweakersMixedTitel = items[0].title;
             var TweakersMixedCategorie = items[0].categories;
+            var TweakersMixedDescription = items[0].description;
             var TweakersMixedDatumTZ = items[0].date;
             var TweakersMixedDatum = Date.parse(TweakersMixedDatumTZ) / 1000
             this.log('End Success GetTweakersMixed');
@@ -80,13 +81,12 @@ class Tweakers extends Homey.App {
             this.log('IF timestamp:', this.TweakersMixed + ' = ' + 'TweakersMixedDatum:', TweakersMixedDatum);
             this.TweakersMixed = TweakersMixedDatum;
             console.log('IF titel:', TweakersMixedTitel);
-            console.log('IF TweakersMixedCategorie:', TweakersMixedCategorie);
             console.log('IF timestamp update:', this.TweakersMixed);
 
             //trigger flow
-
             let tokens = {
-                'title': TweakersMixedTitel
+                'title': TweakersMixedTitel,
+                'description': TweakersMixedDescription
             }
 
             return this.TriggerTweakersMixed
@@ -111,6 +111,8 @@ class Tweakers extends Homey.App {
 
             var items = await feedparser.parse(url);
             var TweakersNieuwsTitel = items[0].title;
+            var TweakersNieuwsDescription = items[0].description;
+            var TweakersNieuwsCategories = items[0].categories;
             var TweakersNieuwsDatumTZ = items[0].date;
             var TweakersNieuwsDatum = Date.parse(TweakersNieuwsDatumTZ) / 1000
             this.log('End Success GetTweakersNieuws');
@@ -127,10 +129,12 @@ class Tweakers extends Homey.App {
             console.log('IF timestamp update:', this.TweakersNieuws);
 
             //trigger flow
-
             let tokens = {
-                'title': TweakersNieuwsTitel
+                'title': TweakersNieuwsTitel,
+                'description': TweakersNieuwsDescription
             }
+
+
 
             return this.TriggerTweakersNieuws
                 .trigger(tokens)
@@ -153,6 +157,8 @@ class Tweakers extends Homey.App {
 
             var items = await feedparser.parse(url);
             var TweakersMeukTitel = items[0].title;
+            var TweakersMeukCategorie = items[0].categories;
+            var TweakersMeukDescription = items[0].description;
             var TweakersMeukDatumTZ = items[0].date;
             var TweakersMeukDatum = Date.parse(TweakersMeukDatumTZ) / 1000
             this.log('End Success GetTweakersMeukTracker');
@@ -169,9 +175,9 @@ class Tweakers extends Homey.App {
             console.log('IF timestamp update:', this.TweakersMeukTracker);
 
             //trigger flow
-
             let tokens = {
-                'title': TweakersMeukTitel
+                'title': TweakersMeukTitel,
+                'description': TweakersMeukDescription
             }
 
             return this.TriggerTweakersMeukTracker
@@ -195,6 +201,8 @@ class Tweakers extends Homey.App {
 
             var items = await feedparser.parse(url);
             var TweakersGamesTitel = items[0].title;
+            var TweakersGamesCategorie = items[0].categories;
+            var TweakersGamesDescription = items[0].description;
             var TweakersGamesDatumTZ = items[0].date;
             var TweakersGamesDatum = Date.parse(TweakersGamesDatumTZ) / 1000
             this.log('End Success GetTweakersGames');
@@ -211,9 +219,9 @@ class Tweakers extends Homey.App {
             console.log('IF timestamp update:', this.TweakersGames);
 
             //trigger flow
-
             let tokens = {
-                'title': TweakersGamesTitel
+                'title': TweakersGamesTitel,
+                'description': TweakersGamesDescription
             }
 
             return this.TriggerTweakersGames
@@ -237,6 +245,8 @@ class Tweakers extends Homey.App {
 
             var items = await feedparser.parse(url);
             var TweakersVraagAanbodTitel = items[0].title;
+            var TweakersVraagAanbodCategorie = items[0].categories;
+            var TweakersVraagAanbodDescription = items[0].description;
             var TweakersVraagAanbodDatumTZ = items[0].date;
             var TweakersVraagAanbodDatum = Date.parse(TweakersVraagAanbodDatumTZ) / 1000
             this.log('End Success GetTweakersVraagAanbod');
@@ -253,9 +263,9 @@ class Tweakers extends Homey.App {
             console.log('IF timestamp update:', this.TweakersVraagAanbod);
 
             //trigger flow
-
             let tokens = {
-                'title': TweakersVraagAanbodTitel
+                'title': TweakersVraagAanbodTitel,
+                'description': TweakersVraagAanbodDescription
             }
 
             return this.TriggerTweakersVraagAanbod

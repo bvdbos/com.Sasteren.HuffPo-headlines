@@ -3,6 +3,10 @@ Tweakers is the Dutch biggest website for everything about  computers, consumer 
 
 Tweakers is Nederlands grootste site voor alles wat met computers, consumentenelektronica en andere technologie te maken heeft. Het publiek bestaat uit consumenten en IT-professionals. Tweakers bereikt iedereen met een interesse voor technologie, van de meest 'hardcore' overklokker tot de gewone consument die alles wil weten over mobiele telefoons, tablets en televisies.
 
+### Disclaimer
+De Tweakers Homey app is op geen enkele manier verbonden aan Tweakers.net, al doet de naam vermoeden van wel. Deze app is gemaakt zonder commerciële intenties.
+De Tweakers homey app is slecht een schil om de openbaar beschikbare RSS feeds.
+
 ### Flow Triggers:
 Tweakers RSS nieuwsbericht is beschikbaar met de volgende tags:
 ```
@@ -64,11 +68,15 @@ App is only available in the Dutch language because it's an app for a Dutch webs
 ### Donate
 [![Donate](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png)](https://paypal.me/lubbertkramer)
 
-### Disclaimer
-De Tweakers Homey app is op geen enkele manier verbonden aan Tweakers.net, al doet de naam vermoeden van wel. Deze app is gemaakt zonder commerciële intenties.
-De Tweakers homey app is slecht een schil om de openbaar beschikbare RSS feeds.
-
 # Release notes:
+
+### 0.8.1:
+* Added description token to flow card
+* Removed unnecessary use of await (see note)
+* Replaced global variables with class instance variables (see note)
+* Moved Flow card registration to onInit function (see note)
+Note: After review from Athom (@Baskiers) about SDK 2 use and support from @swttt with the module/promises
+
 
 ### 0.8.0 - first beta release:
 * SDK 2
