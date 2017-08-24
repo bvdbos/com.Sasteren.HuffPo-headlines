@@ -10,7 +10,7 @@
 		"nl": "De Tweakers Homey app"
 	},
 	"category": "internet",
-	"version": "0.8.0",
+	"version": "0.8.1",
 	"compatibility": ">=1.5.0",
 	"author": {
 		"name": "Lubbert Kramer",
@@ -21,8 +21,8 @@
 		"homey:manager:speech-output"
 	],
 	"images": {
-		"large": "./assets/images/large.png",
-		"small": "./assets/images/small.png"
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
 	},
 	"flow": {
 		"triggers": [
@@ -40,7 +40,18 @@
 							"en": "title",
 							"nl": "titel"
 						},
-						"example": "Homey is nu wereldwijd te koop"
+						"example": "Athom lanceert Homey Kickstarter campagne voor spraakgestuurd huis"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "Emile Nijssen en Stefan Witkamp, de twee jonge Nederlandse ondernemers achter Athom, hebben vandaag op Kickstarter hun Homey-campagne gelanceerd. Homey is een nieuw consumentenproduct dat huisautomatisering naar een geheel nieuw niveau brengt door naast huishoudelijke apparaten ook multimedia en online accounts te ondersteunen en spraakgestuurd te werk gaat."
+						}
 					}
 				]
 			},
@@ -58,7 +69,18 @@
 							"en": "title",
 							"nl": "titel"
 						},
-						"example": "Homey is nu wereldwijd te koop"
+						"example": "Athom lanceert Homey Kickstarter campagne voor spraakgestuurd huis"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "Emile Nijssen en Stefan Witkamp, de twee jonge Nederlandse ondernemers achter Athom, hebben vandaag op Kickstarter hun Homey-campagne gelanceerd. Homey is een nieuw consumentenproduct dat huisautomatisering naar een geheel nieuw niveau brengt door naast huishoudelijke apparaten ook multimedia en online accounts te ondersteunen en spraakgestuurd te werk gaat."
+						}
 					}
 				]
 			},
@@ -76,7 +98,18 @@
 							"en": "title",
 							"nl": "titel"
 						},
-						"example": "Homey 1.5 is zojuist vrijgegeven in het stabiele kanaal"
+						"example": "Athom lanceert Homey Kickstarter campagne voor spraakgestuurd huis"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "Emile Nijssen en Stefan Witkamp, de twee jonge Nederlandse ondernemers achter Athom, hebben vandaag op Kickstarter hun Homey-campagne gelanceerd. Homey is een nieuw consumentenproduct dat huisautomatisering naar een geheel nieuw niveau brengt door naast huishoudelijke apparaten ook multimedia en online accounts te ondersteunen en spraakgestuurd te werk gaat."
+						}
 					}
 				]
 			},
@@ -94,7 +127,18 @@
 							"en": "title",
 							"nl": "titel"
 						},
-						"example": "Homeygotchi is zojuist gelanceerd voor Homey"
+						"example": "Athom lanceert Homey Kickstarter campagne voor spraakgestuurd huis"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "Emile Nijssen en Stefan Witkamp, de twee jonge Nederlandse ondernemers achter Athom, hebben vandaag op Kickstarter hun Homey-campagne gelanceerd. Homey is een nieuw consumentenproduct dat huisautomatisering naar een geheel nieuw niveau brengt door naast huishoudelijke apparaten ook multimedia en online accounts te ondersteunen en spraakgestuurd te werk gaat."
+						}
 					}
 				]
 			},
@@ -112,7 +156,18 @@
 							"en": "title",
 							"nl": "titel"
 						},
-						"example": "Homey te koop voor geen geld"
+						"example": "Athom lanceert Homey Kickstarter campagne voor spraakgestuurd huis"
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "Emile Nijssen en Stefan Witkamp, de twee jonge Nederlandse ondernemers achter Athom, hebben vandaag op Kickstarter hun Homey-campagne gelanceerd. Homey is een nieuw consumentenproduct dat huisautomatisering naar een geheel nieuw niveau brengt door naast huishoudelijke apparaten ook multimedia en online accounts te ondersteunen en spraakgestuurd te werk gaat."
+						}
 					}
 				]
 			}
