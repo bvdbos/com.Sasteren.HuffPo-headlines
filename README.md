@@ -5,7 +5,7 @@ Tweakers is Nederlands grootste site voor alles wat met computers, consumentenel
 
 ### Disclaimer
 De Tweakers Homey app is op geen enkele manier verbonden aan Tweakers.net, al doet de naam vermoeden van wel. Deze app is gemaakt zonder commerciële intenties.
-De Tweakers homey app is slecht een schil om de openbaar beschikbare RSS feeds.
+De Tweakers homey app is slechts een schil om de openbaar beschikbare RSS feeds.
 
 ### Bugs / Feature requests
 * Please submit bugs or feature requests at the [github page of the Tweakers Homey app](https://github.com/lubbertkramer/net.tweakers.homey) or at the app topic at the Athom forum
@@ -69,7 +69,7 @@ Tweakers RSS question and answer (marketplace) is available with the following t
 
 # Release notes:
 
-### 0.8.1:
+### 0.8.2:
 * Added description token to flow card
 * Removed unnecessary use of await (see note)
 * Replaced global variables with class instance variables (see note)
