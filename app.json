@@ -27,7 +27,7 @@
 	"flow": {
 		"triggers": [
 			{
-				"id": "HuffPoWorldNews",
+				"id": "TriggerHuffPoWorldNews",
 				"title": {
 					"en": "Huffington Post World News",
 					"nl": "Huffington Post Wereld Nieuws"
@@ -57,7 +57,7 @@
 				]
 			},
 			{
-				"id": "HuffPoBusiness",
+				"id": "TriggerHuffPoBusiness",
 				"title": {
 					"en": "Huffington Post Business News",
 					"nl": "Huffington Post Zakelijk Nieuws"
@@ -87,7 +87,7 @@
 				]
 			},
 			{
-				"id": "HuffPoEntertainment",
+				"id": "TriggerHuffPoEntertainment",
 				"title": {
 					"en": "Huffington Post Entertainment",
 					"nl": "Huffington Post Show Nieuws"
@@ -117,7 +117,7 @@
 				]
 			},
 						{
-				"id": "HuffPoSports",
+				"id": "TriggerHuffPoSports",
 				"title": {
 					"en": "Huffington Post Sports News",
 					"nl": "Huffington Post Sport Nieuws"
@@ -147,7 +147,7 @@
 				]
 			},
 			{
-				"id": "HuffPoBooks",
+				"id": "TriggerHuffPoBooks",
 				"title": {
 					"en": "Huffington Post Books News",
 					"nl": "Huffington Post Books Nieuws"
@@ -177,7 +177,7 @@
 				]
 			},
 			{
-				"id": "HuffPoGreen",
+				"id": "TriggerHuffPoGreen",
 				"title": {
 					"en": "Huffington Post Green News",
 					"nl": "Huffington Post Groen Nieuws"
@@ -207,5 +207,14 @@
 				]
 			}			
 		]
-	}
+	},
+    "actions": [
+        {
+            "id": "readHuffPoGreen",
+            "title": {
+                "en": "Read articles",
+				"nl": "Lees berichten voor"
+            }
+        }
+    ]
 }

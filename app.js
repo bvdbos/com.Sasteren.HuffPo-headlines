@@ -16,7 +16,8 @@ class Huffpost extends Homey.App {
         this.HuffPoSports = null;
         this.HuffPoBooks = null;
 		this.HuffPoGreen = null;
-
+		this.readNews = null;
+		
         //Flow card registration 
 		//to do via settings uitkiezen welke gepolled moeten worden
         this.TriggerHuffPoWorldNews = new Homey.FlowCardTrigger('TriggerHuffPoWorldNews')
@@ -31,7 +32,18 @@ class Huffpost extends Homey.App {
             .register();
         this.TriggerHuffPoGreen = new Homey.FlowCardTrigger('TriggerHuffPoGreen')
             .register();
-			
+
+		new Homey.FlowCardAction('readNews')
+                .register()
+                .registerRunListener( args, state ) => {
+					const url = 'http://www.huffingtonpost.com/section/green/feed';
+					this.log('Read GetHuffPoGreen');
+					var items = await feedparser.parse(url);
+					speech.say(items[0].title;);		
+                    return Promise.resolve( true );                
+                };				
+
+		
         //Start loop interval
         this.log('StartInterval');
         this.startLoop();
@@ -323,6 +335,10 @@ class Huffpost extends Homey.App {
         }
 
     }
+	
+
+	
+	
 	
 }
 
