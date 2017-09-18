@@ -206,15 +206,15 @@
 					}
 				]
 			}			
-		]
-	},
+		],
     "actions": [
         {
-            "id": "readHuffPoGreen",
+            "id": "readNews",
             "title": {
                 "en": "Read articles",
 				"nl": "Lees berichten voor"
             }
         }
     ]
+	}
 }

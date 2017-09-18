@@ -33,15 +33,22 @@ class Huffpost extends Homey.App {
         this.TriggerHuffPoGreen = new Homey.FlowCardTrigger('TriggerHuffPoGreen')
             .register();
 
-		new Homey.FlowCardAction('readNews')
+			
+
+		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews')
                 .register()
-                .registerRunListener( args, state ) => {
-					const url = 'http://www.huffingtonpost.com/section/green/feed';
-					this.log('Read GetHuffPoGreen');
-					var items = await feedparser.parse(url);
-					speech.say(items[0].title;);		
+                .registerRunListener( ( args, state)  => {
+                    const url = 'http://www.huffingtonpost.com/section/green/feed';
+                    this.log('Get News');
+                    try {
+                        var items = await feedparser.parse(url)
+                    } catch (err) {
+                        this.log("error getting items")
+                    }
+                    speech.say(items[0].title;);        
                     return Promise.resolve( true );                
-                };				
+                }   
+                );			
 
 		
         //Start loop interval
