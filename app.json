@@ -216,5 +216,8 @@
             }
         }
     ]
-	}
+	},
+	"permissions": [
+    "homey:manager:speech-output"
+	]
 }

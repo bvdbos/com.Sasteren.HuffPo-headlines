@@ -2,6 +2,7 @@
 
 const Homey = require('homey');
 const feedparser = require('feedparser-promised');
+const striptags = require('striptags');
 
 class Huffpost extends Homey.App {
 
@@ -33,29 +34,54 @@ class Huffpost extends Homey.App {
         this.TriggerHuffPoGreen = new Homey.FlowCardTrigger('TriggerHuffPoGreen')
             .register();
 
-			
-
-		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews')
-                .register()
-                .registerRunListener( ( args, state)  => {
+		let readnews_listener = async(args)  => {
                     const url = 'http://www.huffingtonpost.com/section/green/feed';
                     this.log('Get News');
-                    try {
-                        var items = await feedparser.parse(url)
-                    } catch (err) {
-                        this.log("error getting items")
-                    }
-                    speech.say(items[0].title;);        
-                    return Promise.resolve( true );                
-                }   
-                );			
+                    let items = await feedparser.parse(url);
+					var maxNews = 5;
+					for (var i = 0; i < maxNews; i++) {
+						if(items[i].title !== undefined) {
+							var title = replaceContent(items[i].title);
+							var content = replaceContent(items[i].description);
+							if (title.length > 0 && content.length > 0) {
+								var textstring = (formatHeadline(headlineKeywords[i] + '. ' + title + '. ' + content));
+								Homey.ManagerSpeechOutput.say(textstring);                        
+								this.log(textstring);
+							}
+						}
+					}
+		};
+
+
+		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');
+		TriggerHuffPoReadNews
+                .register()
+                .registerRunListener(readnews_listener);			
 
 		
         //Start loop interval
         this.log('StartInterval');
         this.startLoop();
 
+		let replaceContent = function(text) {
+			text = text.replace(('BBC'), ('B B C'));
+			return text;
+		}; 
+		
+		var formatHeadline = function(text) {
+			text = text.replace('"', '');
+			text = text.replace("'", "");
+			text = text.replace("\"", "");
+			text = striptags(text).substr(0, 255);
+			var index = text.lastIndexOf('.');
+			return [text.slice(0, index), text.slice(index + 1)][0]+'.';
+		};
+	
+		var headlineKeywords = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fiveteen', 'sixteen', 'seventeen', 'eightteen', 'nineteen', 'twenty'];
+				
     }
+
+	
 
 
     //Function LoopHuffPo
