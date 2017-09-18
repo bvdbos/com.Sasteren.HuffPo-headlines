@@ -2,7 +2,7 @@
 
 const Homey = require('homey');
 const feedparser = require('feedparser-promised');
-const striptags = require('striptags');
+var striptags = require('striptags');
 
 class Huffpost extends Homey.App {
 
