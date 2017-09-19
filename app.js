@@ -35,6 +35,7 @@ class Huffpost extends Homey.App {
             .register();
 
 		let readnews_listener = async(args)  => {
+			        var selectId = args.selector.value;
                     const url = 'http://www.huffingtonpost.com/section/green/feed';
                     this.log('Get News');
                     let items = await feedparser.parse(url);
@@ -52,23 +53,20 @@ class Huffpost extends Homey.App {
 					}
 		};
 
+		var urlarray = [['naam1','url1'],['naam2','url2']];
+
 		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');
 		TriggerHuffPoReadNews
                 .register()
                 .registerRunListener(readnews_listener)
 				.getArgument('my_dropdown')
 				.registerAutoCompleteListener( (args) => {
-					return Promise.resolve([
-					{
-						name: 'item1',
-						value: 'value1'
-					},
-					{
-						name: 'item1',
-						value: 'value1'
-					}
-					]);
-				})
+					var list = [];
+					urlarray.forEach(function(item, index){
+						list.push(item);
+					});
+					return Promise.resolve(list);
+				});
 		
         //Start loop interval
         this.log('StartInterval');
