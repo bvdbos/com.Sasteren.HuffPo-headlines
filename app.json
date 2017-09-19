@@ -213,7 +213,24 @@
             "title": {
                 "en": "Read articles",
 				"nl": "Lees berichten voor"
-            }
+            },
+			"args": [
+				{
+					"type": "autocomplete",
+					"name": "my_dropdown"	
+				},
+				{
+					"type": "number",
+					"name": "number_items",
+					"min": 0,
+					"max": 20,
+					"step": 1,
+					"placeholder": {
+						"en": "# articles"
+					}
+				}				
+			]
+
         }
     ]
 	},

@@ -2,7 +2,7 @@
 
 const Homey = require('homey');
 const feedparser = require('feedparser-promised');
-var striptags = require('striptags');
+const striptags = require('striptags');
 
 class Huffpost extends Homey.App {
 
@@ -52,12 +52,23 @@ class Huffpost extends Homey.App {
 					}
 		};
 
-
 		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');
 		TriggerHuffPoReadNews
                 .register()
-                .registerRunListener(readnews_listener);			
-
+                .registerRunListener(readnews_listener)
+				.getArgument('my_dropdown')
+				.registerAutoCompleteListener( (args) => {
+					return Promise.resolve([
+					{
+						name: 'item1',
+						value: 'value1'
+					},
+					{
+						name: 'item1',
+						value: 'value1'
+					}
+					]);
+				})
 		
         //Start loop interval
         this.log('StartInterval');
