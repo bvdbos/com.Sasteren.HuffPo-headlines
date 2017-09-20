@@ -53,20 +53,23 @@ class Huffpost extends Homey.App {
 					}
 		};
 
-		var urlarray = [['naam1','url1'],['naam2','url2']];
-
-		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');
-		TriggerHuffPoReadNews
-                .register()
-                .registerRunListener(readnews_listener)
-				.getArgument('my_dropdown')
-				.registerAutoCompleteListener( (args) => {
-					var list = [];
-					urlarray.forEach(function(item, index){
-						list.push(item);
-					});
-					return Promise.resolve(list);
-				});
+		var urlarray = [['naam1','url1'],['naam2','url2']];         
+		
+		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');         
+		TriggerHuffPoReadNews             
+			.register()             
+			.registerRunListener(( args, state ) => {                 
+				var selectNaam = args.selector.naam;                 
+				var selectUrl = args.selector.url;                 
+				return Promise.resolve(true);             
+			})             
+			.getArgument('selector')             
+			.registerAutocompleteListener( args => {                 
+				var list = [];                 
+				urlarray.forEach(function(item, index){   				
+					list.push({ naam: item[0], selector: item[1] });                 
+				});                 
+			})
 		
         //Start loop interval
         this.log('StartInterval');

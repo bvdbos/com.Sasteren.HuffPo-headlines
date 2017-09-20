@@ -217,7 +217,10 @@
 			"args": [
 				{
 					"type": "autocomplete",
-					"name": "my_dropdown"	
+					"name": "selector",
+						"placeholder": {
+							"en": "channel"
+						}			
 				},
 				{
 					"type": "number",
