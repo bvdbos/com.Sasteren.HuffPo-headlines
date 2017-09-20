@@ -1,0 +1,265 @@
+{
+	"id": "com.sasteren.huffpo",
+	"sdk": 2,
+	"name": {
+		"en": "HuffPo",
+		"nl": "HuffPo"
+	},
+	"description": {
+		"en": "The Huffington Post Homey app",
+		"nl": "De Huffington Post Homey app"
+	},
+	"category": "internet",
+	"version": "0.9.0",
+	"compatibility": ">=1.5.0",
+	"author": {
+		"name": "Bas van den Bosch",
+		"email": "bvdbos@gmail.com"
+	},
+    "contributors": {
+        "developers": [
+            {
+                "name": "Lubbert Kramer",
+                "email": ""
+            }
+        ]
+    },
+	"permissions": [
+		"homey:manager:speech-input",
+		"homey:manager:speech-output"
+	],
+	"images": {
+		"large": "/assets/images/large.png",
+		"small": "/assets/images/small.png"
+	},
+	"flow": {
+		"triggers": [
+			{
+				"id": "TriggerHuffPoWorldNews",
+				"title": {
+					"en": "Huffington Post World News",
+					"nl": "Huffington Post Wereld Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			},
+			{
+				"id": "TriggerHuffPoBusiness",
+				"title": {
+					"en": "Huffington Post Business News",
+					"nl": "Huffington Post Zakelijk Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			},
+			{
+				"id": "TriggerHuffPoEntertainment",
+				"title": {
+					"en": "Huffington Post Entertainment",
+					"nl": "Huffington Post Show Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			},
+						{
+				"id": "TriggerHuffPoSports",
+				"title": {
+					"en": "Huffington Post Sports News",
+					"nl": "Huffington Post Sport Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			},
+			{
+				"id": "TriggerHuffPoBooks",
+				"title": {
+					"en": "Huffington Post Books News",
+					"nl": "Huffington Post Books Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			},
+			{
+				"id": "TriggerHuffPoGreen",
+				"title": {
+					"en": "Huffington Post Green News",
+					"nl": "Huffington Post Groen Nieuws"
+				},
+				"tokens": [
+					{
+						"name": "title",
+						"type": "string",
+						"title": {
+							"en": "title",
+							"nl": "titel"
+						},
+						"example": "Guess who claimed Ariana Huffington is unattractive, both inside and out. This person fully understands why her former husband left her for a man and thinks he made a good decision."
+					},
+					{
+						"name": "description",
+						"type": "string",
+						"title": {
+							"en": "description",
+							"nl": "beschrijving"
+						},
+						"example": {
+							"en": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.",
+							"nl": "I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."
+						}
+					}
+				]
+			}			
+		],
+    "actions": [
+        {
+            "id": "readNews",
+            "title": {
+                "en": "Read articles",
+				"nl": "Lees berichten voor"
+            },
+			"args": [
+					{
+						"name": "selector",
+						"type": "autocomplete",
+						"placeholder": {
+							"en": "Channel",
+							"nl": "Kanaal"
+						}
+					},
+					{
+						"name": "aantal",
+						"type": "number",
+						"min": "1",
+						"max": "20",
+						"placeholder": {
+							"en": "1...20"
+						}
+					},
+					{
+						"name": "inhoud",
+						"type": "dropdown",
+						"values": [
+							{
+								"id": "titel",
+								"label": {
+									"en": "Title"
+								}
+							},
+							{
+								"id": "beschrijving",
+								"label": {
+									"en": "Description"
+								}
+							}
+						]
+					}
+			]
+        }
+    ]
+	}
+}
