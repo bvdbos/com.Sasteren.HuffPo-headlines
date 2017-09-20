@@ -10,6 +10,15 @@ class Huffpost extends Homey.App {
 
         this.log('Huffington Post is gestart');
 
+		var urlarray = [
+			['WorldNews','http://www.huffingtonpost.com/section/world-news/feed'],
+			['Business','http://www.huffingtonpost.com/section/business/feed'],
+			['Entertainment','http://www.huffingtonpost.com/dept/entertainment/feed'],
+			['Sports','http://www.huffingtonpost.com/section/sports/feed'],
+			['Books','http://www.huffingtonpost.com/section/books/feed'],
+			['Green','http://www.huffingtonpost.com/section/green/feed'],
+			];  
+		
         //App instantie variablen
         this.HuffPoWorldNews = null;
         this.HuffPoBusiness = null;
@@ -34,42 +43,51 @@ class Huffpost extends Homey.App {
         this.TriggerHuffPoGreen = new Homey.FlowCardTrigger('TriggerHuffPoGreen')
             .register();
 
-		let readnews_listener = async(args)  => {
-			        var selectId = args.selector.value;
-                    const url = 'http://www.huffingtonpost.com/section/green/feed';
-                    this.log('Get News');
-                    let items = await feedparser.parse(url);
-					var maxNews = 5;
-					for (var i = 0; i < maxNews; i++) {
-						if(items[i].title !== undefined) {
-							var title = replaceContent(items[i].title);
-							var content = replaceContent(items[i].description);
-							if (title.length > 0 && content.length > 0) {
-								var textstring = (formatHeadline(headlineKeywords[i] + '. ' + title + '. ' + content));
-								Homey.ManagerSpeechOutput.say(textstring);                        
-								this.log(textstring);
-							}
+		let readnews_listener = async( args, state ) => {                 
+				var selectNaam = args.selector.name;                 
+				var selectUrl = args.selector.url;
+				var maxNews = args.aantal;
+				var inhoud = args.inhoud;
+                let items = await feedparser.parse(selectUrl);
+				if (items.length > 0) {} else {
+					// If no news items at all have been found, we notify the user
+					Homey.ManagerSpeechOutput.say('No news-items were found');
+					return Promise.resolve(true);
+				}
+			
+				for (var i = 0; i < maxNews; i++) {
+					if(items[i].title !== undefined) {
+						var title = replaceContent(items[i].title);
+						var content = replaceContent(items[i].description);
+						if (title.length > 0 || content.length > 0) {
+								var textstring = (formatHeadline(headlineKeywords[i] + '. ' + title + '. '));
+								if (inhoud == 'beschrijving') {
+									var textstring2 = textstring + replaceContent(content);
+								} else {
+									var textstring2 = textstring;
+								}
+								Homey.ManagerSpeechOutput.say(textstring2);                        
+							this.log(textstring2);
 						}
 					}
+				}
+				return Promise.resolve(true);
 		};
 
-		var urlarray = [['naam1','url1'],['naam2','url2']];         
+       
 		
 		let TriggerHuffPoReadNews = new Homey.FlowCardAction('readNews');         
 		TriggerHuffPoReadNews             
-			.register()             
-			.registerRunListener(( args, state ) => {                 
-				var selectNaam = args.selector.naam;                 
-				var selectUrl = args.selector.url;                 
-				return Promise.resolve(true);             
-			})             
+			.register()
+			.registerRunListener(readnews_listener)
 			.getArgument('selector')             
-			.registerAutocompleteListener( args => {                 
-				var list = [];                 
+			.registerAutocompleteListener( args => { 
+				var list = [];		  
 				urlarray.forEach(function(item, index){   				
-					list.push({ naam: item[0], selector: item[1] });                 
-				});                 
-			})
+					list.push({ name: item[0], url: item[1] });                 
+				});
+				return Promise.resolve(list);				
+			});
 		
         //Start loop interval
         this.log('StartInterval');

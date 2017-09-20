@@ -1,18 +1,23 @@
-## Tweakers Homey app
-Tweakers is the Dutch biggest website for everything about  computers, consumer electronics and other technology.
+## Huffpost Headlines
+        
+This app tells you the latest news
+Source: Huffington Post
 
-Tweakers is Nederlands grootste site voor alles wat met computers, consumentenelektronica en andere technologie te maken heeft. Het publiek bestaat uit consumenten en IT-professionals. Tweakers bereikt iedereen met een interesse voor technologie, van de meest 'hardcore' overklokker tot de gewone consument die alles wil weten over mobiele telefoons, tablets en televisies.
-
+## Remarks:
+* Based on the [Tweakers-app](https://github.com/lubbertkramer/net.tweakers.homey)
+* American Newsfeed
+* Doesn't work through the [phone-app](https://play.google.com/store/apps/details?id=com.athom.homey&hl=nl) (yet)
+ 
 ### Disclaimer
-De Tweakers Homey app is op geen enkele manier verbonden aan Tweakers.net, al doet de naam vermoeden van wel. Deze app is gemaakt zonder commerciële intenties.
-De Tweakers homey app is slechts een schil om de openbaar beschikbare RSS feeds.
+The huffpo app is not made by Huffington Post. The app is made without commercial intentions. 
+This app is merely a shell for the available RSS feeds.
 
 ### Bugs / Feature requests
-* Please submit bugs or feature requests at the [github page of the Tweakers Homey app](https://github.com/lubbertkramer/net.tweakers.homey) or at the app topic at the Athom forum
+* Please submit bugs or feature requests at the [github page of the Huffpo Homey app](https://github.com/bvdbos/com.Sasteren.HuffPo-headlines) or at the app topic at the Athom forum
 
 ### Supported languages / Ondersteunende talen:
-* Dutch / Nederlands
-App is only available in the Dutch language because it's an app for a Dutch website
+* English
+App is only available in the English language because it's an app for an English website
 
 ### Flow Triggers:
 Tweakers RSS nieuwsbericht is beschikbaar met de volgende tags:
@@ -20,43 +25,7 @@ Tweakers RSS nieuwsbericht is beschikbaar met de volgende tags:
 * Titel: Titel van de publicatie
 ```
 
-Tweakers RSS news release is available with the following tokens:
-```
-* Title: Title of the news release
-```
-
-Tweakers RSS meuktracker (software) is beschikbaar met de volgende tags:
-```
-* Titel: Titel van de publicatie
-```
-
-Tweakers RSS meuktracker (software) is available with the following tokens:
-```
-* Title: Title of the news release
-```
-
-Tweakers RSS spellen is beschikbaar met de volgende tags:
-```
-* Titel: Titel van de publicatie
-```
-
-Tweakers RSS games is available with the following tokens:
-```
-* Title: Title of the news release
-```
-
-Tweakers RSS vraag en aanbod is beschikbaar met de volgende tags:
-```
-* Titel: Titel van de publicatie
-```
-
-Tweakers RSS question and answer (marketplace) is available with the following tokens:
-```
-* Title: Title of the news release
-```
-
-* De Tweakers Homey app checkt iedere 5 minuten of er nieuwe publicaties beschikbaar zijn
-* The Tweakers homey app checks every 5 minutes if there are new publications available
+* The Huffington Post homey app checks every 5 minutes if there are new publications available
 
 ### Upcoming features / Aankomende functionaliteiten:
 * Spraak-invoer voor verzoeken / Speech-input for requests
@@ -64,24 +33,8 @@ Tweakers RSS question and answer (marketplace) is available with the following t
 * Actie kaart die een x aantal publicaties van x categorieën kan voorlezen / Action cards wich reads  x number of publications from x categories
 * Instellingen pagina / Settings page
 
-### Donate
-[![Donate](https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png)](https://paypal.me/lubbertkramer)
 
 # Release notes:
 
-### 0.8.2:
-* Added description token to flow card
-* Removed unnecessary use of await (see note)
-* Replaced global variables with class instance variables (see note)
-* Moved Flow card registration to onInit function (see note)
-```
-Note: After review from Athom (@Baskiers) about SDK 2 use and support from @swttt with the module/promises
-```
-
-### 0.8.0 - first beta release:
-* SDK 2
-* Trigger card for Tweakers games [by this rss](http://feeds.feedburner.com/tweakers/mixed)
-* Trigger card for Tweakers news [by this rss](http://feeds.feedburner.com/tweakers/nieuws)
-* Trigger card for Tweakers meuktracker [by this rss](http://feeds.feedburner.com/tweakers/meuktracker)
-* Trigger card for Tweakers games [by this rss](http://feeds.feedburner.com/tweakers/games)
-* Trigger card for Tweakers games [by this rss](https://tweakers.net/feeds/va.xml)
+### Version 0.9 - rewritten version
+* changed news as a trigger
