@@ -33,7 +33,7 @@ Huffington Post RSS News is available with the following categories and triggers
 Trigger: Checks every 5 minutes if there are new publications available
 Action: Reads 'x' Newsitems from source 'y' and lets you choose between "Title" or "Title and description"
 
-## Upcoming features / Aankomende functionaliteiten:
+## Upcoming features :
 * Speech-input for requests
 * Selecting categories for each RSS to narrow down the selection
 * Settings page
@@ -43,7 +43,8 @@ Action: Reads 'x' Newsitems from source 'y' and lets you choose between "Title" 
 ## Release notes:
 
 ### Version 0.9 - rewritten version
-* changed news as a trigger
+* based on the [Tweakers-app](https://github.com/lubbertkramer/net.tweakers.homey)
+* News as a trigger
 * omitted speech-trigger for now
 * changed from nl.sasteren to com.sasteren
 
