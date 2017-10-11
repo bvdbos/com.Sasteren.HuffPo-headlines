@@ -18,6 +18,10 @@
 	},
     "contributors": {
         "developers": [
+	            {
+                "name": "Bas van den Bosch",
+                "email": ""
+		},
             {
                 "name": "Lubbert Kramer",
                 "email": ""
