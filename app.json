@@ -10,7 +10,7 @@
 		"nl": "De Huffington Post Homey app"
 	},
 	"category": "internet",
-	"version": "0.9.2",
+	"version": "0.9.3",
 	"compatibility": ">=1.5.0",
 	"author": {
 		"name": "Bas van den Bosch",
@@ -36,6 +36,10 @@
 		"large": "/assets/images/large.png",
 		"small": "/assets/images/small.png"
 	},
+	    "bugs": {
+        "url": "https://github.com/bvdbos/com.Sasteren.HuffPo-headlines/issues"
+    },
+    "athomForumDiscussionId": 3868,
 	"flow": {
 		"triggers": [
 			{

@@ -42,6 +42,8 @@ Action: Reads 'x' Newsitems from source 'y' and lets you choose between "Title" 
 
 ## Release notes:
 
+### Version 0.9.3 - extended app-page
+
 ### Version 0.9 - rewritten version
 * based on the [Tweakers-app](https://github.com/lubbertkramer/net.tweakers.homey)
 * News as a trigger
