@@ -36,9 +36,6 @@
 		"large": "/assets/images/large.png",
 		"small": "/assets/images/small.png"
 	},
-	    "bugs": {
-        "url": "https://github.com/bvdbos/com.Sasteren.HuffPo-headlines/issues"
-    },
     "athomForumDiscussionId": 3868,
 	"flow": {
 		"triggers": [
