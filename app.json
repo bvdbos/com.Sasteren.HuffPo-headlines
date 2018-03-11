@@ -12,6 +12,7 @@
 	"category": "internet",
 	"version": "0.9.3",
 	"compatibility": ">=1.5.0",
+	"athomForumDiscussionId": 3868,
 	"author": {
 		"name": "Bas van den Bosch",
 		"email": "bvdbos@gmail.com"
@@ -36,7 +37,6 @@
 		"large": "/assets/images/large.png",
 		"small": "/assets/images/small.png"
 	},
-    "athomForumDiscussionId": 3868,
 	"flow": {
 		"triggers": [
 			{
