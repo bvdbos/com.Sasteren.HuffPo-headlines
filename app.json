@@ -239,8 +239,8 @@
 					{
 						"name": "aantal",
 						"type": "number",
-						"min": "1",
-						"max": "20",
+						"min": 1,
+						"max": 20,
 						"placeholder": {
 							"en": "1...20"
 						}
